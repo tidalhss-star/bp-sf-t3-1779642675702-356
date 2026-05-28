@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <meta name="description" content="마포 서버 웜업의 기준. 화곡 셔츠룸이 제시하는 24시간 실시간 최적화 시스템. 접속 지연은 없다. 약한 서버는 걸러졌다.">
+    <meta name="keywords" content="화곡 셔츠룸, 마포 서버 웜업, 화곡 게임방, 마포 피시방, 서버 최적화, 웜업 시스템, 화곡동 셔츠룸, 게임 서버, 정보">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-356.pages.dev/info">
+    <meta property="og:title" content="화곡 셔츠룸 | 정보 — 서버 웜업은 정보로 증명한다">
+    <meta property="og:description" content="마포 서버 웜업의 충격적인 새로운 기준. 약한 서버는 가라. 화곡 셔츠룸이 당신의 접속을 보장한다.">
+    <title>화곡 셔츠룸 | 정보 — 서버 웜업의 진실</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Noto Sans KR', 'Courier New', monospace;
+            background-color: #0a0a0a;
+            color: #e0ffe0;
+            line-height: 1.4;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .hamburger-menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+            border-bottom: 2px solid #00ff41;
+        }
+        .hamburger-menu .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #00ff41;
+            text-shadow: 0 0 20px #00ff41;
+        }
+        .hamburger-menu nav a {
+            color: #ff00ff;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border: 1px solid transparent;
+            padding: 6px 12px;
+            transition: 0.2s;
+        }
+        .hamburger-menu nav a:hover {
+            border-color: #ff00ff;
+            color: #00ff41;
+        }
+        .hero-info {
+            padding: 80px 0 40px;
+            text-align: center;
+        }
+        .hero-info h1 {
+            font-size: 3.2rem;
+            font-weight: 900;
+            color: #00ff41;
+            text-shadow: 0 0 30px #00ff41;
+            letter-spacing: 6px;
+            margin-bottom: 20px;
+        }
+        .hero-info p {
+            font-size: 1.2rem;
+            color: #aaffaa;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding: 60px 0;
+        }
+        .info-card {
+            background: #0f0f0f;
+            border: 2px solid #00ff41;
+            padding: 40px;
+            position: relative;
+            box-shadow: 10px 10px 0 #00ff41;
+        }
+        .info-card h2 {
+            font-size: 1.8rem;
+            color: #ff00ff;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        .info-card p {
+            font-size: 0.95rem;
+            color: #d0ffd0;
+            line-height: 1.8;
+        }
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .info-card ul li {
+            padding: 8px 0;
+            font-size: 0.95rem;
+            border-bottom: 1px dashed #00ff41;
+            color: #b0ffb0;
+        }
+        .info-card ul li::before {
+            content: '> ';
+            color: #ff00ff;
+            font-weight: bold;
+        }
+        .faq-section {
+            padding: 60px 0;
+        }
+        .faq-section h2 {
+            font-size: 2.4rem;
+            color: #00ff41;
+            text-shadow: 0 0 20px #00ff41;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 4px;
+        }
+        .faq-item {
+            background: #0f0f0f;
+            border-left: 6px solid #ff00ff;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 6px 6px 0 #00ff41;
+        }
+        .faq-item h3 {
+            font-size: 1.4rem;
+            color: #00ff41;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+        }
+        .faq-item p {
+            color: #c0ffc0;
+            line-height: 1.8;
+        }
+        .region-signal {
+            padding: 40px 0 80px;
+            text-align: center;
+            background: linear-gradient(45deg, #0a0a0a, #001a00);
+            border: 2px solid #ff00ff;
+            margin: 40px 0;
+        }
+        .region-signal h3 {
+            font-size: 2rem;
+            color: #ff00ff;
+            text-shadow: 0 0 30px #ff00ff;
+            margin-bottom: 20px;
+            letter-spacing: 6px;
+        }
+        .region-signal p {
+            font-size: 1.1rem;
+            color: #aaffaa;
+        }
+        .footer {
+            border-top: 2px solid #00ff41;
+            padding: 30px 0;
+            text-align: center;
+            color: #666;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+            .hamburger-menu {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hamburger-menu nav a {
+                margin: 10px;
+                display: inline-block;
+            }
+            .hero-info h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="hamburger-menu">
+            <div class="logo">화곡 셔츠룸</div>
+            <nav>
+                <a href="/">홈</a>
+                <a href="/info">정보</a>
+                <a href="/services">서비스</a>
+                <a href="/contact">연락처</a>
+            </nav>
+        </header>
+
+        <section class="hero-info">
+            <h1>정보는 무기다</h1>
+            <p>약한 서버는 정보에서 걸러진다. 화곡 셔츠룸이 증명하는 마포 서버 웜업의 진실. 당신의 접속은 단순한 연결이 아니다. 그것은 최적화된 시스템의 결과물이다.</p>
+        </section>
+
+        <section class="info-grid">
+            <div class="info-card">
+                <h2>서버 웜업 시스템</h2>
+                <p>24시간 실시간 모니터링, 순간 웜업 프로토콜. 화곡동 마포 지역의 물리적 거리를 무시하는 최적화 루트를 제공한다. 약한 서버는 자동으로 차단. 강한 연결만 살아남는다.</p>
+                <ul>
+                    <li>지연 시간 0.1ms 미만</li>
+                    <li>동시 접속 200% 안정성</li>
+                    <li>자동 트래픽 분산</li>
+                </ul>
+            </div>
+            <div class="info-card">
+                <h2>지역 시그널 — 마포</h2>
+                <p>마포구, 화곡동. 이 지역의 서버는 특별하다. 지리적 이점을 극대화한 웜업 인프라. 화곡 셔츠룸은 단순한 장소가 아니다. 하나의 시스템이다.</p>
+                <ul>
+                    <li>화곡동 직접 연결 라인</li>
+                    <li>마포 데이터 센터 최적 경로</li>
+                    <li>현장 테스트 완료</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2>네가 궁금해할 모든 것</h2>
+            <div class="faq-item">
+                <h3>서버 웜업이 뭐길래?</h3>
+                <p>웜업은 준비된 시스템이다. 네가 접속하기 전에 이미 모든 데이터가 캐싱되고 경로가 최적화된다. 딜레이는 변명의 여지가 없다.</p>
+            </div>
+            <div class="faq-item">
+                <h3>화곡 셔츠룸만의 차이는?</h3>
+                <p>우린 약속하지 않는다. 증명한다. 마포 지역의 실제 서버 로드 테스트, 24시간 실시간 모니터링, 그리고 과감한 최적화. 다른 곳과 비교하지 마라.</p>
+            </div>
+            <div class="faq-item">
+                <h3>이 정보가 나한테 무슨 도움이 되는데?</h3>
+                <p>네가 게임을 하든, 작업을 하든, 접속 지연은 생산성을 죽인다. 우리는 그 지연을 죽인다. 그게 도움이다.</p>
+            </div>
+            <div class="faq-item">
+                <h3>마포 지역 아니면 못 쓰나?</h3>
+                <p>마포가 메인 타겟이지만, 시스템은 전국 범위를 커버한다. 다만 화곡동 직결 라인의 이점은 마포에서 최대치를 발휘한다.</p>
+            </div>
+        </section>
+
+        <section class="region-signal">
+            <h3>마포 서버 웜업 — 살아있는 연결</h3>
+            <p>약한 서버는 가라. 화곡 셔츠룸이 증명하는 강한 연결. 정보는 증명이다. 지금 바로 웜업하라.</p>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 화곡 셔츠룸 | 마포 서버 웜업 시스템 | 모든 권리 보유</p>
+        </footer>
+    </div>
+</body>
+</html>

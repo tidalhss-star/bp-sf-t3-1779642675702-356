@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <meta name="description" content="서버 웜업의 진실을 까발린다. 화곡 셔츠룸과 마포 피시방이 감추는 웜업의 비밀, 블로그에서 전격 공개.">
+    <meta name="keywords" content="화곡 셔츠룸, 마포 서버 웜업, 서버 최적화 블로그, 웜업 시스템, 게임 서버 튜닝, 화곡동 셔츠룸">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-356.pages.dev/blog">
+    <meta property="og:title" content="화곡 셔츠룸 | 블로그: 서버 웜업의 민낯">
+    <meta property="og:description" content="화곡 셔츠룸이 말하는 웜업의 진실. 마포 피시방이 절대 가르쳐주지 않는 서버 최적화의 핵심">
+    <title>블로그 | 화곡 셔츠룸 - 마포 서버 웜업</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #8888aa;
+            --accent-neon: #00ffc8;
+            --accent-pulse: #ff0055;
+            --border-harsh: 2px solid #2a2a3a;
+            --font-mono: 'Courier New', monospace;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: var(--font-mono);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        /* 헤더 */
+        .header {
+            padding: 20px 0;
+            border-bottom: var(--border-harsh);
+            background: var(--bg-secondary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-neon);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+        .logo span { color: var(--accent-pulse); }
+        /* 햄버거 메뉴 */
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+        .hamburger-menu span {
+            width: 28px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.3s;
+        }
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        .nav-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+        }
+        .nav-list a:hover, .nav-list a.active { color: var(--accent-neon); }
+        /* 메인 */
+        .main {
+            padding: 60px 0;
+            min-height: 70vh;
+        }
+        .page-title {
+            font-size: 3rem;
+            text-transform: uppercase;
+            color: var(--accent-pulse);
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+            text-shadow: 0 0 20px rgba(255,0,85,0.3);
+        }
+        .page-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 50px;
+            border-left: 3px solid var(--accent-neon);
+            padding-left: 15px;
+        }
+        /* 블로그 포스트 */
+        .blog-post {
+            background: var(--bg-secondary);
+            border: var(--border-harsh);
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-post .meta {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .blog-post h2 {
+            font-size: 2rem;
+            color: var(--accent-neon);
+            margin-bottom: 30px;
+            line-height: 1.3;
+        }
+        .blog-post p {
+            margin-bottom: 20px;
+            font-size: 1rem;
+            color: #bbb;
+        }
+        .blog-post .highlight {
+            border-left: 4px solid var(--accent-pulse);
+            padding-left: 20px;
+            margin: 30px 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+        .blog-post .cta-quote {
+            background: rgba(0,255,200,0.05);
+            border: 1px solid var(--accent-neon);
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .blog-post .cta-quote p {
+            margin: 0;
+            font-weight: bold;
+            color: var(--accent-neon);
+        }
+        /* 푸터 */
+        .footer {
+            border-top: var(--border-harsh);
+            padding: 30px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+        .footer a {
+            color: var(--accent-neon);
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .hamburger-menu { display: flex; }
+            .nav-list {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--bg-secondary);
+                padding: 20px;
+                border-bottom: var(--border-harsh);
+            }
+            .nav-list.active { display: flex; }
+            .page-title { font-size: 2rem; }
+            .blog-post { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="/" class="logo">화곡<span>셔츠룸</span></a>
+            <div class="hamburger-menu" onclick="document.querySelector('.nav-list').classList.toggle('active')">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/">홈</a></li>
+                    <li><a href="/about">서비스</a></li>
+                    <li><a href="/pricing">요금</a></li>
+                    <li><a href="/blog" class="active">블로그</a></li>
+                    <li><a href="/contact">문의</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <h1 class="page-title">블로그</h1>
+            <p class="page-subtitle">서버 웜업의 숨겨진 진실. 당신은 아직 모른다.</p>
+
+            <article class="blog-post">
+                <div class="meta">2024.03.21 · 마포 서버 웜업 시리즈 · 5분 읽기</div>
+                <h2>화곡 셔츠룸이 말하는 '웜업'은 진짜 웜업이 아니다</h2>
+                
+                <p>여기 마포 피시방 업주들, 손님들아. 너희가 '서버 웜업'이라고 부르는 그 행위, 사실은 본질을 놓치고 있어. 화곡 셔츠룸이 24시간 동안 몸소 증명한 진실을 지금 까발린다.</p>
+                
+                <p>일반적인 피시방은 오전 6시에 전 서버를 켜고, 로딩 화면만 몇 분 띄워놓는다. 그게 웜업이라고? 개소리. 진짜 웜업은 서버에 '살아있는 연결'을 걸어놓는 거야. 단순히 프로세스를 띄우는 게 아니라, 실제 트래픽 시나리오를 미리 시뮬레이션하는 것. 화곡 셔츠룸은 이것을 '블러드 웜업'이라고 부른다.</p>
+                
+                <div class="highlight">
+                    "서버는 냉혈 기계가 아니다. 미리 피를 순환시켜야 한다. 그게 웜업의 본질이다."<br>
+                    — 화곡 셔츠룸 기술팀.
+                </div>
+                
+                <p>우리는 지난 6개월 동안 마포 지역 5개 피시방과 비교 테스트를 진행했다. 결과는 충격적이었다. 우리의 블러드 웜업을 적용한 서버는 피크 타임(오후 8시~자정) 기준으로 패킷 손실률 73% 감소, 최초 접속 대기 시간 1.2초 → 0.3초로 단축. 반면 경쟁 업소는 여전히 3초 이상의 지연 시간을 기록했다.</p>
+                
+                <p>비결은 간단하다. 단순한 CPU 웜업이 아니라, 데이터베이스 커넥션 풀을 미리 예열하고, 캐시 계층에 인기 맵 데이터를 선탑재하는 것. 그리고 가장 중요한 건 — 네트워크 인터페이스에 '가짜 핸드셰이크'를 보내 라우팅 테이블을 최적화하는 기술. 이것은 화곡 셔츠룸만의 노하우다.</p>
+                
+                <div class="cta-quote">
+                    <p>지금 당신의 서버는 식어가고 있다. 24시간 동시 접속 최적화, 약한 서버는 가라.</p>
+                    <p style="margin-top:10px; font-size:0.9rem; color:var(--text-secondary);">→ <a href="/pricing" style="color:var(--accent-pulse);">블러드 웜업 체험하러 가기</a></p>
+                </div>
+                
+                <p>마포의 모든 피시방이 '셔츠룸급' 최적화를 원한다면, 지금 바로 연락해라. 우리는 당신의 서버를 다시 태어나게 할 것이다. 살아있는 웜업, 그게 진짜다.</p>
+            </article>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 화곡 셔츠룸 · 마포 서버 웜업의 기준 <span style="color:var(--accent-pulse);">♥</span></p>
+            <p><a href="/privacy">개인정보 처리방침</a> · <a href="/terms">이용약관</a></p>
+            <p style="margin-top:10px; font-size:0.7rem;">모든 서버는 살아 숨쉰다. 약한 서버는 죽은 서버다.</p>
+        </div>
+    </footer>
+
+    <script>
+        // 햄버거 메뉴 클릭 시 외부 클릭 시 닫기
+        document.addEventListener('click', function(e) {
+            const nav = document.querySelector('.nav-list');
+            const hamburger = document.querySelector('.hamburger-menu');
+            if (!nav.contains(e.target) && !hamburger.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
